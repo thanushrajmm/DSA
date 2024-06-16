@@ -1,0 +1,38 @@
+Examples:
+
+Input Format: N = 3
+Result: 
+*****  
+ ***
+  *   
+Input Format: N = 6
+Result:     
+***********
+ *********
+  *******
+   ***** 
+    ***    
+     *
+
+Solution:
+public class Solution {
+    public static void nStarTriangle(int n) {
+        for(int i = 0; i<n; i++){
+                //space
+                for(int j = 0; j<i; j++){
+                    System.out.print(" ");
+        }
+                //star
+                for(int j = 0; j< 2*n - (2*i+1) ; j++){ // 2*n-(2*i+1) - print odd numbers in descending
+                    System.out.print("*");
+
+        }
+                //space
+                for(int j = 0; j<i; j++){
+                    System.out.print(" ");
+        }
+
+                System.out.println();
+        }
+    }
+}
