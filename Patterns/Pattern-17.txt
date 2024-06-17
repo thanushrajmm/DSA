@@ -1,0 +1,44 @@
+Examples:
+
+Input Format: N = 3
+Result: 
+  A  
+ ABA 
+ABCBA
+
+
+Input Format: N = 6
+Result:   
+     A     
+    ABA    
+   ABCBA   
+  ABCDCBA  
+ ABCDEDCBA 
+ABCDEFEDCBA
+
+Solution:
+public class Solution {
+    public static void alphaHill(int n) {
+        for(int i = 0; i<n;i++){
+            //space
+            for(int j = 0; j<n-i-1; j++){
+                System.out.print(" ");
+            }
+            //char
+            char ch = 'A';
+            int breakpoint = (2*i+1)/2;   //Condition for dividing the next half
+            for(int j = 1; j<=2*i+1; j++){
+            System.out.print(ch+" "); 
+            if(j<= breakpoint ) ch++;    //before breakpoint increment
+            else ch--;                   //after breakpoint decrement
+           
+            
+            }
+            //space
+            for(int j = 0; j<n-i-1; j++){
+                System.out.print(" ");
+            }
+                System.out.println();
+        }
+    }
+}
