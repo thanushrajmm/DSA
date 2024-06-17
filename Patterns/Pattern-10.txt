@@ -1,0 +1,38 @@
+Examples:
+
+Input Format: N = 3
+Result: 
+  *  
+  **
+  ***  
+  **
+  *   
+Input Format: N = 6
+Result:   
+     *
+     **
+     *** 
+     ****
+     *****
+     ******  
+     *****
+     ****
+     ***    
+     **
+     *
+
+Solution:
+public class Solution {
+    public static void nStarTriangle(int n) {
+        for(int i = 1; i<=2*n-1; i++){     //no of rows
+            int stars = i;
+            if(i>n)                        //condition if row value exceed n value 
+            stars = 2*n - i ;              //stars printed after condition set
+            for(int j = 1; j<=stars;j++){
+                System.out.print("*");
+            }
+                System.out.println();
+        }
+            
+}
+}
