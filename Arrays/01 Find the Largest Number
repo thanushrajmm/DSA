@@ -11,10 +11,10 @@ The largest element of given array is 90.
 class Compute {
     
     public int largest(int arr[], int n){
-        int large = arr[0];
+        int large = arr[0];          //assume large = arr[0]
         for(int i = 0; i<=n-1; i++){
-            if(arr[i] > large){
-            large = arr[i];              
+            if(arr[i] > large){      //if there is something greater than arr[0]
+            large = arr[i];          //then assign large to it.
             }
         }
         return large;
