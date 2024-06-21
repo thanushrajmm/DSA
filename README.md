@@ -1,1 +1,1 @@
-All the solved questions are learned from Striver's A2Z DSA Course. For further understanding, refer to Striver's website: [Striver's A2Z DSA Course Sheet](https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2).
+All the solved questions are learned from sources like 1.Prepinsta 2.GFG 3.Striver's SDE Sheet 4.Leetcode problems.
