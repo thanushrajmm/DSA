@@ -12,7 +12,7 @@ public class Solution {
     int j = n-1;
     int[] COPY_ARR = new int[n]; //Creating a new Array COPY_ARR[]. Size of the Array will be same as arr[]
     while(i<arr.length){
-        COPY_ARR[i] = arr[j];
+        COPY_ARR[i] = arr[j];     
         i++;
         j--;
     }
