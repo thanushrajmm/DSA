@@ -15,8 +15,11 @@ public class Main {
             map.put(arr[i], 1);
         }
         for(HashMap.Entry<Integer,Integer> entry : map.entrySet() ){
-            if(entry.getValue()>1){                                  //Checking the values that occurs more than 1 time
+            if(entry.getValue()>1){                                  //Checking the values that occurs more than 1 time(Repeating) 
                 System.out.println(entry.getKey()+" ");              //Then printing the key of it.
+            }
+            if(entry.getValue()==1){                                //Checking for non-repeating values.
+                System.out.println(entry.getKey()+" "); 
             }
         }
     }
