@@ -22,4 +22,23 @@
     }
 }
 --------------------------------------------------------------------------------------------------------------------
-  
+2. Using reverse //Space Complexity = O(1);
+
+    public class Solution {
+
+    public static void leftrotate(ArrayList<Integer> arr, int k){
+        int n = arr.size();              
+        if(n == 0) return;
+        k = k % n; 
+        if(k == 0) return;
+
+        Collections.reverse(arr.subList(0, k));     //reversing the array till k; 
+        Collections.reverse(arr.subList(k, n));     //reversing the array from k to n;
+        Collections.reverse(arr);                   //reversing the total array;
+    }
+	public static ArrayList<Integer> rotateArray(ArrayList<Integer> arr, int k) {
+        // Write your code here.
+        leftrotate(arr, k);
+        return arr;
+}
+}
