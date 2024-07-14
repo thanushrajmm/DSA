@@ -1,4 +1,4 @@
-Problem Link : [ http://bit.ly/3IQQdrt ]
+Problem Link : [ http://bit.ly/3IQQdrt ] ->left rotate
 Example:
 'arr '= [1,2,3,4,5]
 'k' = 1  rotated array = [5,1,2,3,4]
