@@ -1,3 +1,10 @@
+Problem link : [https://bit.ly/3IpS7Rd]
+Example : 
+Input: 
+n = 5, arr1[] = {1, 2, 3, 4, 5}  
+m = 5, arr2 [] = {1, 2, 3, 6, 7}
+Output: 
+1 2 3 4 5 6 7
 1. Brute Force - using Hashset 
   Time Compleixty : O( (m+n)log(m+n) ); 
   Space Complexity : O(m+n);
