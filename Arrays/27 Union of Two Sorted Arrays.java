@@ -26,7 +26,7 @@ public class Solution {
   TC -> O(m+n)
   Space Complexity : O(m+n)
 
-  public class Solution {
+public class Solution {
     public static List< Integer > sortedArray(int []a, int []b) {
         // Write your code here
        int n1 = a.length;
@@ -34,29 +34,42 @@ public class Solution {
        int i = 0;
        int j = 0;
        ArrayList<Integer> Union = new ArrayList<>();
-       while(i<n1 && j<n2){
-           if(a[i] <= b[j]){
-               if(Union.size()==0 || Union.get(Union.size()-1) != a[i] )     
-               Union.add(a[i]);
-           }
-           i++;
-           else{
-               if(Union.size()==0 || Union.get(Union.size()-1) != b[j])
-               Union.add(b[j]);
-           }
+       while (i < n1 && j < n2) {                                               //When i and j are less than the size of both arrays
+            if (a[i] < b[j]) {                                                  //check if a[i] is less than b[j]
+                if (Union.isEmpty() || Union.get(Union.size() - 1) != a[i]) {   //
+                    Union.add(a[i]);
+                }
+                i++;
+            } else if (a[i] > b[j]) {
+                if (Union.isEmpty() || Union.get(Union.size() - 1) != b[j]) {
+                    Union.add(b[j]);
+                }
+                j++;
+            } else {
+                // Both elements are equal
+                if (Union.isEmpty() || Union.get(Union.size() - 1) != a[i]) {
+                    Union.add(a[i]);
+                }
+                i++;
+                j++;
+            }
+        }
+        
+        // Add remaining elements from array a
+        while (i < n1) {
+            if (Union.isEmpty() || Union.get(Union.size() - 1) != a[i]) {
+                Union.add(a[i]);
+            }
+            i++;
+        }
+        
+        // Add remaining elements from array b
+        while (j < n2) {
+            if (Union.isEmpty() || Union.get(Union.size() - 1) != b[j]) {
+                Union.add(b[j]);
+            }
             j++;
-       }
-       while(i < n1){
-           if(Union.get(Union.size()-1 != a[i]))
-           Union.add(a[i]);
-             i++;
-       }
-      
-        while(j < n2){
-           if(Union.get(Union.size()-1 != b[j]))
-           Union.add(b[j]);
-             j++;
-       }
+        }
      
        return Union;
     }
