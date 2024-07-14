@@ -34,9 +34,9 @@ public class Solution {
        int i = 0;
        int j = 0;
        ArrayList<Integer> Union = new ArrayList<>();
-       while (i < n1 && j < n2) {                                               //When i and j are less than the size of both arrays
-            if (a[i] < b[j]) {                                                  //check if a[i] is less than b[j]
-                if (Union.isEmpty() || Union.get(Union.size() - 1) != a[i]) {   //
+       while (i < n1 && j < n2) {                                               
+            if (a[i] < b[j]) {                                                  
+                if (Union.isEmpty() || Union.get(Union.size() - 1) != a[i]) {   
                     Union.add(a[i]);
                 }
                 i++;
