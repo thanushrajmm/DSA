@@ -1,3 +1,7 @@
+Problem link : [ https://bit.ly/3XbsF6k]
+Example :
+Input: ‘n’ = 5, ‘arr’ = [1, 2, 0, 0, 2, 3]
+Output: [1, 2, 2, 3, 0, 0]
 public class Solution {
         
         public static int[] moveZeros(int n, int []a) {
