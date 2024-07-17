@@ -21,3 +21,21 @@ public class Main {
 
 O/P:
 [80, 50, 20, 40, 10, 60, 30]
+------------------------------------------------------------------------------
+   Problem Link = [https://leetcode.com/problems/contains-duplicate/]
+    Contains Duplicate: 
+    class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        HashSet<Integer> set = new HashSet<>();
+        for(int i = 0; i<nums.length; i++){
+            int num = nums[i];
+        if(set.contains(num)){
+            return true;
+        }
+        else {
+            set.add(num);
+        }
+    }
+            return false;
+    }
+}
