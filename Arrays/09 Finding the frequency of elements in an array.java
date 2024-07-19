@@ -8,7 +8,7 @@ class Main
     for(int i = 0; i<arr.length;i++){             
         int count = 1;                             //initialising count as 1; because the number occurs atleast once;
         for(int j = i+1; j < arr.length; j++ ){
-            if(no == arr[j]){                      //checking if the arr[i]==arr[j]
+            if(no == arr[j]){                      //checking if the no==arr[j]
                 count++;                           //if yes increment count;
                 freq[j] = -1;                      //mark the place of freq[j] as -1;
             }
