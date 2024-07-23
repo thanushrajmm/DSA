@@ -1,13 +1,5 @@
 problem link -> [https://tinyurl.com/55cy4jtd]
 public class Solution {
-        
-     public static void printLinkedList(Node head) {
-        Node current = head;
-        while (current != null) {
-            System.out.print(current.data + " ");
-            current = current.next;
-        }
-    }
     public static Node constructLL(int []arr) {
         // Write your code here
            if (arr == null || arr.length == 0) {
