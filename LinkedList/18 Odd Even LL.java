@@ -8,8 +8,7 @@ class Solution {
         ListNode odd = head;
         ListNode evenHead = head.next;
         ListNode even = head.next;
-
-       
+        
         while(even!=null && even.next!=null){
             odd.next = odd.next.next;
             even.next = even.next.next;
