@@ -14,3 +14,22 @@ class Solution {
         
     }
 }
+-----------------------------------------------------------------------------------
+//using Recursion
+
+public class Solution
+{
+    public static Node reverseLinkedList(Node head)
+    {
+        // Write your code here.
+        if(head ==null || head.next == null){
+            return head;
+        }
+
+        Node newHead = reverseLinkedList(head.next);
+        Node front = head.next;
+        front.next = head;
+        head.next = null;
+        return newHead;
+    }
+}
