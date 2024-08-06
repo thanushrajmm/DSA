@@ -1,4 +1,5 @@
 Problem Link -> [https://www.geeksforgeeks.org/problems/selection-sort/1?utm_source=youtube&utm_medium=collab_striver_ytdescription&utm_campaign=selection-sort]
+
 class Solution
 {
 	int  select(int arr[], int i)
@@ -23,3 +24,5 @@ class Solution
 	    }
 	}
 }
+TC -> O(n^2);
+SC -> O(1);
