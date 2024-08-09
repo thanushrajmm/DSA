@@ -2,10 +2,8 @@ problem link -> [https://leetcode.com/problems/implement-queue-using-stacks/]
 class MyQueue {
     Stack<Integer> s1 = new Stack<>();
     Stack<Integer> s2 = new Stack<>();
-    public MyQueue() {
-        
+    public MyQueue() {   
     }
-    
     public void push(int x) {
         s1.add(x);
     }
