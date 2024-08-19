@@ -17,5 +17,6 @@ class GfG
 		newNode.prev = temp;
 		temp.next = newNode;
 		newNode.next = ptr;
+		ptr.prev = newNode;
 	}
 }
