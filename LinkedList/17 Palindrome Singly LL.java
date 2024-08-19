@@ -1,26 +1,33 @@
 https://leetcode.com/problems/palindrome-linked-list/description/
 class Solution {
+
+    public ListNode reverse(ListNode head) {
+        ListNode prev = null;
+        ListNode curr = head;
+        while(curr != null) {
+            ListNode next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        return prev;
+    }
+
     public boolean isPalindrome(ListNode head) {
-         ListNode slow = head, fast = head, prev, temp;
-        while (fast != null && fast.next != null) {
+        ListNode slow = head;
+        ListNode fast = head.next;
+        while(fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
         }
-        prev = slow;
-        slow = slow.next;
-        prev.next = null;
-        while (slow != null) {
-            temp = slow.next;
-            slow.next = prev;
-            prev = slow;
-            slow = temp;
-        }
-        fast = head;
-        slow = prev;
-        while (slow != null) {
-            if (fast.val != slow.val) return false;
-            fast = fast.next;
-            slow = slow.next;
+        ListNode rev = reverse(slow.next); // reverse second list
+        slow.next = null;
+        while(rev != null) {
+            if(head.val != rev.val) {
+                return false;
+            }
+            head = head.next;
+            rev = rev.next;
         }
         return true;
     }
