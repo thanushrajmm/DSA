@@ -1,7 +1,7 @@
 problem link -> [https://leetcode.com/problems/remove-linked-list-elements/description/]
 class Solution {
     public ListNode removeElements(ListNode head, int val) {
-                ListNode temp1 = null;
+        ListNode temp1 = null;
         ListNode temp2 = head;
         while(temp2 != null){
             if(temp2.val == val){
