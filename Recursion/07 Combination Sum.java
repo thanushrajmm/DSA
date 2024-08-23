@@ -1,4 +1,6 @@
 problem link -> [ https://leetcode.com/problems/combination-sum/ ]
+Time complexity: O(2^t)
+Space complexity: O(t+k)
 class Solution {
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
         List<List<Integer>> res = new ArrayList<>();
