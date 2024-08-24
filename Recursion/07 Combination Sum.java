@@ -3,25 +3,23 @@ Time complexity: O(2^t)
 Space complexity: O(t+k)
 class Solution {
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
-        List<List<Integer>> res = new ArrayList<>();
-
-        makeCombination(candidates, target, 0, new ArrayList<>(), 0, res);
-        return res;        
+        List<List<Integer>> ans = new ArrayList<>();
+        findCombinations(0, candidates, target, ans, new ArrayList<>());
+        return ans;
     }
-
-    private void makeCombination(int[] candidates, int target, int idx, List<Integer> comb, int total, List<List<Integer>> res) {
-        if (total == target) {
-            res.add(new ArrayList<>(comb));
+    public void findCombinations(int ind, int[] candidates, int target, List<List<Integer>> ans, List<Integer> ds ){
+        if(ind == candidates.length){
+            if(target == 0){
+                ans.add(new ArrayList<>(ds));
+            }
             return;
         }
-
-        if (total > target || idx >= candidates.length) {
-            return;
+        if(candidates[ind]<=target){
+            ds.add(candidates[ind]);
+            findCombinations(ind, candidates, target - candidates[ind], ans, ds);
+            ds.remove(ds.size()-1);
         }
-
-        comb.add(candidates[idx]);
-        makeCombination(candidates, target, idx, comb, total + candidates[idx], res);
-        comb.remove(comb.size() - 1);
-        makeCombination(candidates, target, idx + 1, comb, total, res);
-    }    
+        findCombinations(ind+1, candidates, target, ans, ds);
+    }
 }
+
