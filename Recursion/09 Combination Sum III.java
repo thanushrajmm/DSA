@@ -1,4 +1,8 @@
 Problem link -> [ https://leetcode.com/problems/combination-sum-iii/ ] 
+Example 1:
+Input: k = 3, n = 7
+Output: [[1,2,4]]
+    
 class Solution {
     List<List<Integer>> ans=new ArrayList<>();
     public List<List<Integer>> combinationSum3(int k, int n) {
