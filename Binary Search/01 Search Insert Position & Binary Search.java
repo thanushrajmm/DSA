@@ -1,3 +1,4 @@
+// searrch insert position and lower bound are same.
 class Solution {
     public int searchInsert(int[] nums, int target) {
         int start = 0;
