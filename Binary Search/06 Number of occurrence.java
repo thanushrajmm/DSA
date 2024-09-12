@@ -22,11 +22,11 @@ class Solution {
                 index = mid;
                 e = mid-1;
             }
-            else if(arr[mid]<x){
-                s = mid +1;
+            else if(arr[mid]>=x){
+                e = mid -1;
             }
             else{
-                e = mid-1;
+                s = mid+1;
             }
         }
         return index;
@@ -42,11 +42,11 @@ class Solution {
                 index = mid;
                 s = mid +1;
             }
-            else if(arr[mid]<x){
-                s = mid +1;
+            else if(arr[mid]>x){
+                e = mid -1;
             }
             else{
-                e = mid-1;
+                s = mid+1;
             }
         }
         return index;
