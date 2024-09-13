@@ -3,9 +3,9 @@ class Solution {
     ArrayList<Integer> v = new ArrayList<>();
         void calculate(TreeNode root){
         if(root != null){
-            inorderTraversal(root.left);
+            calculate(root.left);
             v.add(root.val);
-            inorderTraversal(root.right);
+            calculate(root.right);
         }
     }
     public List<Integer> inorderTraversal(TreeNode root) {
