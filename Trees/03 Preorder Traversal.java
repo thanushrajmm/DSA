@@ -4,8 +4,8 @@ class Solution {
         void calculate(TreeNode root){
         if(root != null){
             v.add(root.val);
-            preorderTraversal(root.left);
-            preorderTraversal(root.right);
+            calculate(root.left);
+            calculate(root.right);
         }
     }
     public List<Integer> preorderTraversal(TreeNode root) {
