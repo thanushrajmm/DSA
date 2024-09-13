@@ -3,8 +3,8 @@ class Solution {
     ArrayList<Integer> v = new ArrayList<>();
         void calculate(TreeNode root){
         if(root != null){
-            postorderTraversal(root.left);
-            postorderTraversal(root.right);
+            calculate(root.left);
+            calculate(root.right);
             v.add(root.val);
         }
     }
