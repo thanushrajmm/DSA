@@ -1,4 +1,4 @@
-link -> [ https://leetcode.com/problems/binary-tree-level-order-traversal/ ] 
+link -> [https://leetcode.com/problems/binary-tree-level-order-traversal/] 
 class Solution {
     public List<List<Integer>> levelOrder(TreeNode root) {
         
