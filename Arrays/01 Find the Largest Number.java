@@ -1,4 +1,4 @@
--> Practice link [https://bit.ly/3Pld280]
+Practice link -> [https://bit.ly/3Pld280]
 Example 1:
 Input:
 n = 5
