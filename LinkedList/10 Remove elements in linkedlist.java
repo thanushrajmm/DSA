@@ -13,31 +13,20 @@ Output: []
 
 class Solution {
     public ListNode removeElements(ListNode head, int val) {
-        ListNode temp1 = null;
-        ListNode temp2 = head;
-        while(temp2 != null){
-            if(temp2.val == val){
-                if(temp1 == null){
-                    if(head.next == null){
-                        return null;
-                    }
-                    head = head.next;
-                    temp2 = head;
-                }
-                else if(temp2.next == null){
-                    temp1.next = null;
-                    break;
-                }
-                else{
-                    temp2 = temp2.next;
-                    temp1.next = temp2;
-                }
-            }
-            else{
-                temp1 = temp2;
-                temp2 = temp1.next;
+        // Handle edge case where head itself contains the value to be removed
+        while (head != null && head.val == val) {
+            head = head.next;
+        }
+        ListNode current = head;
+        // Traverse through the list and remove matching elements
+        while (current != null && current.next != null) {
+            if (current.next.val == val) {
+                current.next = current.next.next;  // Skip the node
+            } else {
+                current = current.next;  // Move to the next node
             }
         }
         return head;
     }
 }
+
