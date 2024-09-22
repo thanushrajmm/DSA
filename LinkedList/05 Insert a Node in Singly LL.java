@@ -1,6 +1,6 @@
 class Demo{
     private static Node insertBefVa(Node head, int el, int val){
-        if(head=null) return null;
+        if(head==null) return null;
         if(head.data== val){
             return new Node(el,head);
         }
