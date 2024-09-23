@@ -21,7 +21,7 @@ class Solution {
         for(int i=index;i<numbers.length;i++){
             ds.add(numbers[i]);
             solve(i+1,numbers,k,target-numbers[i],ds);
-            ds.remove(al.size()-1);
+            ds.remove(ds.size()-1);
         }
     }
 }
