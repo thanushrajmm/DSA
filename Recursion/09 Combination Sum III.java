@@ -10,18 +10,18 @@ class Solution {
         solve(0,number,k,n,new ArrayList<>());
         return ans;
     }
-    public void solve(int index,int [] numbers,int k,int target,List<Integer> al){
-        if(target==0 && al.size()==k){
-            ans.add(new ArrayList<>(al));
+    public void solve(int index,int [] numbers,int k,int target,List<Integer> ds){
+        if(target==0 && ds.size()==k){
+            ans.add(new ArrayList<>(ds));
             return;
         }
-        if(al.size()>k){
+        if(ds.size()>k){
             return;
         }
         for(int i=index;i<numbers.length;i++){
-            al.add(numbers[i]);
-            solve(i+1,numbers,k,target-numbers[i],al);
-            al.remove(al.size()-1);
+            ds.add(numbers[i]);
+            solve(i+1,numbers,k,target-numbers[i],ds);
+            ds.remove(al.size()-1);
         }
     }
 }
