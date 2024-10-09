@@ -1,41 +1,54 @@
 problem link -> [https://www.geeksforgeeks.org/problems/merge-sort/0]
-class Solution
-{
-    void merge(int arr[], int l, int m, int r)
-    {
-         // Your code here
-         ArrayList<Integer> temp = new ArrayList<>();   //create a arraylist named temp to store the elements;
-         int left = l;                   //storing low in left;     
-         int right = m+1;                //storing mid+1 in right;
-         while(left<=m && right<=r){     //while left is than mid and mid+1 is less than high; 
-             if(arr[left]<=arr[right]){  //check if arr[left] is less than arr[right]; 
-                 temp.add(arr[left]);    //add arr[left] in temp;
-                 left++;    
-             }
-             else{                       //else
-                 temp.add(arr[right]);   //add arr[right] in temp;
-                 right++;
-             }
-         }
-         while(left<=m){                 //if any element is left in left till mid;
-             temp.add(arr[left]);        //add arr[left] in temp;
-             left++; 
-         }
-         while(right<=r){                //if any element is left in right till high;
-             temp.add(arr[right]);       //add arr[right] in temp;
-             right++;
-         }
-         for(int i = l; i<=r; i++){      //place the elements in temp back in arr;
-             arr[i] = temp.get(i-l);
-         }
+import java.io.*;
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class Main {
+    public static void merge(int arr[], int low, int mid, int high){
+        ArrayList<Integer> temp = new ArrayList<>();
+        int left = low;
+        int right = mid+1;
+        while(left<=mid && right<=high){
+            if(arr[left]<arr[right]){
+                temp.add(arr[left]);
+                left++;
+            }
+            else {
+                temp.add(arr[right]);
+                right++;
+        }
+        }
+        while (left <= mid) {
+            temp.add(arr[left]);
+            left++;
+        }
+        while (right <= high) {
+            temp.add(arr[right]);
+            right++;
+        }
+        for(int i = low; i<=high; i++){
+            arr[i] = temp.get(i-low);
+        }
     }
-    void mergeSort(int arr[], int l, int r)
-    {
-        //this functions divides the array low to mid & mid+1 to high;
-        if(l>=r) return;                  //base condition if low>=high;
-        int mid = (l+r)/2;                //find the middle;
-        mergeSort(arr,l,mid);             //from low to mid;
-        mergeSort(arr,mid+1,r);           //from mid+1 to high;
-        merge(arr,l,mid,r);               //merge function called to merge.(low,mid,high);
+    
+    public static void mergesort(int arr[], int low, int high){
+        if(low>=high) return;
+        int mid = (low+high)/2;
+        mergesort(arr,low,mid);
+        mergesort(arr,mid+1,high);
+        merge(arr,low,mid,high);
     }
-}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int[] arr = new int[n];
+		for(int i = 0; i<n; i++){
+			arr[i] = sc.nextInt();
+		}
+		mergesort(arr, 0, n-1);
+		for (int i = 0; i < n; i++) {
+            System.out.print(arr[i] + " ");
+        }
+		
+	    }
+    }
