@@ -5,9 +5,9 @@ class Solution
 	public static void bubbleSort(int arr[], int n)
     {
         //code here
-        for(int i = n-1; i>= 1; i--){
+        for(int i = n; i>0; i--){
             int didSwap = 0;
-            for(int j = 0; j<= i-1; j++){
+            for(int j = 0; j<=i; j++){
                 if(arr[j]>arr[j+1]){
                     int temp = arr[j];
                     arr[j] = arr[j+1];
