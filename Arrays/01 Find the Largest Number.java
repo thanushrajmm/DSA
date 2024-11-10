@@ -8,6 +8,17 @@ Output:
 Explanation:
 The largest element of given array is 90.
 
+brute force : O(nlogn)
+    class Solution {
+    public static int largest(int[] arr) {
+        // code here
+        int n = arr.length;
+        Arrays.sort(arr);
+        return arr[n-1];
+    }
+}
+
+optimised: O(n)
 class Compute {
     
     public int largest(int arr[], int n){
