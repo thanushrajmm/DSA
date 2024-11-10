@@ -5,7 +5,9 @@ nums =
 [0,0,1,1,1,2,2,3,3,4]
 Output
 [0,1,2,3,4]
+brute force : use hashset
 
+ optimised:  
 class Solution {
     public int removeDuplicates(int[] nums) { //two pointer approach;
         int i = 0;                            //first pointer at i;
