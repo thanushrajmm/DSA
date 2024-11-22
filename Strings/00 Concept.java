@@ -52,3 +52,13 @@ public class Main {
         return lateCount;
     }
 }
+    -------------------------------------------------------------------------------------------------
+      print only the alphabets
+String s = "Word#$#$% Word 1234";
+ StringBuffer r = new StringBuffer();
+ for (int k = 0; k < s.length(); k++) {
+     if(Character.isLetter(s.charAt(k)))
+        r.append(s.charAt(k));     
+ }
+ System.out.println("Result " + r.toString());
+    -----------------------------------------------------------------------------------------------
