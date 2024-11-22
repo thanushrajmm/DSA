@@ -87,4 +87,40 @@ public class Hello {
     }
 }
     --------------------------------------------------------------------------------------------------------
+Identify the missing letter in a nearly complete palindrome string S
+For input malayaam:
 
+left = 2 points to 'l' and right = 5 points to 'y'.
+A mismatch is found, so the missing character is determined as 'l' which is printed as output.
+For input abcddcb:
+
+left = 0 points to 'a' and right = 6 points to 'b'.
+A mismatch is found at the start, so the missing character is determined as 'a' which is printed as output.
+      
+public class MissingAlphabet {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        sc.close();
+        
+        int left = 0;
+        int right = s.length() - 1;
+        char missingChar = ' ';
+        
+        while (left < right) {
+            if (s.charAt(left) != s.charAt(right)) {
+                // The mismatch found, take the character that is out of place
+                if (s.charAt(left + 1) == s.charAt(right)) {
+                    missingChar = s.charAt(left);  // left character is missing in the palindrome
+                } else {
+                    missingChar = s.charAt(right); // right character is missing in the palindrome
+                }
+                break;
+            }
+            left++;
+            right--;
+        }
+        
+        System.out.println(missingChar);
+    }
+}
