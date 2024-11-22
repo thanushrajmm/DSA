@@ -14,3 +14,41 @@ public class Main{
    for (int i = 0; i < n; i++) {
             values[i] = Integer.parseInt(parts[i].trim());
   }
+-----------------------------------------------------------------------------------------------------------------------
+Problem Breakdown
+A meeting is scheduled for 10:00 am.
+We receive a list of arrival times in HH:MM format.
+Our goal is to count how many people arrived after 10:00 am.
+  
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+        String[] arrivalTimes = input.split(" ");
+        
+        int lateCount = countLateComers(arrivalTimes);
+        System.out.println(lateCount);
+        
+        scanner.close();
+    }
+    
+    public static int countLateComers(String[] arrivalTimes) {
+        int lateCount = 0;
+        
+        for (String time : arrivalTimes) {
+            // Split time into hours and minutes
+            String[] parts = time.split(":");
+            int hours = Integer.parseInt(parts[0]);
+            int minutes = Integer.parseInt(parts[1]);
+            
+            // Check if the time is later than 10:00 am
+            if (hours > 10 || (hours == 10 && minutes > 0)) {
+                lateCount++;
+            }
+        }
+        
+        return lateCount;
+    }
+}
