@@ -61,4 +61,30 @@ String s = "Word#$#$% Word 1234";
         r.append(s.charAt(k));     
  }
  System.out.println("Result " + r.toString());
-    -----------------------------------------------------------------------------------------------
+    ----------------------------------------------------------------------------------------------
+
+public class Hello {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String input = sc.nextLine();
+        
+        String[] parts = input.split(" ");
+        double slowest = Double.MAX_VALUE;
+        String ans = "";
+        
+        for (String items : parts) {
+            String[] cars = items.split("@");
+            String carname = cars[0].trim();   // Changed 'parts' to 'cars'
+            double mileage = Double.parseDouble(cars[1].trim());  // Changed 'parts' to 'cars' and used Double.parseDouble
+            
+            if (mileage < slowest) {
+                slowest = mileage;
+                ans = carname;
+            }
+        }
+        
+        System.out.print(ans);
+    }
+}
+    --------------------------------------------------------------------------------------------------------
+
