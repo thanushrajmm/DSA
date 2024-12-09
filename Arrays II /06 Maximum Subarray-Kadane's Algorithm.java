@@ -1,5 +1,5 @@
 problem link -> [ https://leetcode.com/problems/maximum-subarray/ ]
-
+O(n^2);
 class Solution {
     public int maxSubArray(int[] nums) {
         int n = nums.length;
