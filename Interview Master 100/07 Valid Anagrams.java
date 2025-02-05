@@ -14,7 +14,7 @@ Brute ->
     }
 }
 
-Optimised ->
+Better ->
 class Solution {
     public boolean isAnagram(String s, String t) {
         int n = s.length();
@@ -34,3 +34,31 @@ class Solution {
         return map1.equals(map2);
     }
 }
+------------------------------------------------------------
+  Optimised -> 
+  class Solution {
+    public boolean isAnagram(String s, String t) {
+        int n = s.length();
+        int m = t.length();
+        if(n!=m){
+            return false;
+        }
+        char[] arr = new char[26];
+        for(int i=0; i<n; i++){
+            arr[s.charAt(i) - 'a']++;
+        }
+        for(int j = 0; j<m; j++){
+            arr[t.charAt(j)- 'a']--;
+        }
+        for(int k = 0; k<arr.length;k++){
+            if(arr[k]!=0){
+                return false;
+            }
+            else{
+                continue;
+            }
+        }
+        return true;
+    }
+}
+
